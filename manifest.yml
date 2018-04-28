@@ -1,0 +1,10 @@
+---
+applications:
+- name: mlb-api
+  buildpack: java_buildpack
+  path: target/mlb-api-0.0.1-SNAPSHOT.jar
+  disk_quota: 512M
+  memory: 768M
+  instances: 2
+  services:
+   - mlb-player-api-redis

@@ -8,13 +8,17 @@ import org.json.simple.parser.JSONParser;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PlayerService {
-
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	public Player getPlayer(Integer id) {
 		try {
+			logger.info("Retrieving player "+id+" from mlb.com");
 			Document doc = Jsoup.connect("http://m.mlb.com/player/"+id).get();
 			Element element = doc.getElementById("page-variables");
 			

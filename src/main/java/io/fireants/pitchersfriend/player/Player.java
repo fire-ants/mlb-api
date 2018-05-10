@@ -36,104 +36,60 @@ public class Player implements Serializable {
 		this.weight = weight;
 		this.team = team;
 	}
-
+	
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 	public String getFirstName() {
 		return firstName;
 	}
-
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-
 	public String getLastName() {
 		return lastName;
 	}
-
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
 	public String getPosition() {
 		return position;
 	}
-
 	public void setPosition(String position) {
 		this.position = position;
 	}
-
 	public String getBats() {
 		return bats;
 	}
-
 	public void setBats(String bats) {
 		this.bats = bats;
 	}
-
 	public Date getBirthDate() {
 		return birthDate;
 	}
-
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
-
 	public String getHeight() {
 		return height;
 	}
-
 	public void setHeight(String height) {
 		this.height = height;
 	}
-
 	public String getWeight() {
 		return weight;
 	}
-
 	public void setWeight(String weight) {
 		this.weight = weight;
 	}
-
 	public String getTeam() {
 		return team;
 	}
-
 	public void setTeam(String team) {
 		this.team = team;
 	}
-
-	public class Name {
-		
-		private String first;
-		private String last;
-		
-		public Name() {}
-		
-		public Name(String first, String last) {
-			this.first = first;
-			this.last = last;
-		}
-		
-		public String getFirst() {
-			return first;
-		}
-		public void setFirst(String first) {
-			this.first = first;
-		}
-		public String getLast() {
-			return last;
-		}
-		public void setLast(String last) {
-			this.last = last;
-		}
-	}
-
 }
 

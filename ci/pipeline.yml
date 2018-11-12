@@ -1,0 +1,32 @@
+---
+jobs:
+  - name: deploy-to-pws
+    plan: 
+    - get: mlb-api-repo
+      trigger: true
+    - task: build-artifact
+      file: mlb-api-repo/ci/tasks/build.yml
+    - put: deploy-to-cf
+      params: 
+        manifest: mlb-api-repo/manifest.yml
+        path: build-output/mlb-api-0.0.1.jar
+    
+resources:
+  - name: mlb-api-repo
+    type: git
+    source:
+      uri: https://github.com/fire-ants/mlb-api.git
+      branch: {{GIT_BRANCH}}
+      private_key: {{GIT_PRIVATE_KEY}}
+    
+  - name: deploy-to-cf
+    type: cf
+    source:
+      api: {{PWS_API}}
+      username: {{PWS_USER}}
+      password: {{PWS_PASS}}
+      organization: {{PWS_ORG}}
+      space: {{PWS_SPACE}}
+      skip_cert_check: true
+    
+    

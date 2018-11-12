@@ -18,6 +18,9 @@
 .project
 .classpath
 
+#Concourse
+/ci/params.yml
+
 # Maven
 target/
 pom.xml.tag

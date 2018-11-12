@@ -9,6 +9,7 @@ jobs:
     - put: deploy-to-cf
       params: 
         manifest: mlb-api-repo/manifest.yml
+        path: build-output/mlb-api-0.0.1.jar
     
 resources:
   - name: mlb-api-repo

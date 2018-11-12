@@ -6,3 +6,5 @@ applications:
   disk_quota: 512M
   memory: 768M
   instances: 2
+  services: 
+   - mlb-api-sql

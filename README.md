@@ -1,13 +1,10 @@
 ### Install Maven
 [Maven installation guide] (https://maven.apache.org/install.html)
 
-### Install Redis
-[Redis quick start guide] (https://redis.io/topics/quickstart)
-
 ### Run
 Build the jar file
 ```
-$ mvn build
+$ mvn package
 ```
 Run the jar file
 ```

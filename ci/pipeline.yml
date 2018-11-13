@@ -1,9 +1,17 @@
 ---
 jobs:
+  - name: unit-tests
+    plan:
+    - get: mlb-api-repo
+      trigger: true
+    - task: unit-tests
+      file: mlb-api-repo/ci/tasks/unit.yml
+    
   - name: deploy-to-pws
     plan: 
     - get: mlb-api-repo
       trigger: true
+      passed: [unit-tests]
     - task: build-artifact
       file: mlb-api-repo/ci/tasks/build.yml
     - put: deploy-to-cf

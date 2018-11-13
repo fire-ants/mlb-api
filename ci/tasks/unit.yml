@@ -10,8 +10,5 @@ image_resource:
 inputs:
   - name: mlb-api-repo
 
-outputs:
-  - name: build-output
-
 run:
-  path: mlb-api-repo/ci/tasks/build.sh
+  path: mlb-api-repo/ci/tasks/unit.sh
